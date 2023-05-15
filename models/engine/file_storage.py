@@ -7,7 +7,6 @@ to a JSON file and deserializes JSON file to instances
 import datetime
 import json
 import os
-from models.base_model import BaseModel
 
 
 class FileStorage:
@@ -44,7 +43,7 @@ class FileStorage:
         """
         deserializes the JSON file to __objects
         """
-        if not os.path.is_file(File_Stoarage.__file_path):
+        if not os.path.isfile(FileStorage.__file_path):
             return
         with open(FileStorage.__file_path, "r") as file:
             file_dict = json.load(file)

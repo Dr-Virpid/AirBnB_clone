@@ -19,7 +19,7 @@ class BaseModel:
         if kwargs is not None and kwargs != {}:
             for k in kwargs.item():
                 if k == "created_at":
-                    self.__dict__["craeted_at"] = datetime.\
+                    self.__dict__["created_at"] = datetime.\
                         strptime(kwargs["created_at"], '%d/%m/%y %H:%M:%S')
                 elif k == "updated_at":
                     self.__dict__["updated_at"] = datetime.\
