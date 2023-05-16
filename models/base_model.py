@@ -17,15 +17,15 @@ class BaseModel:
            **kwargs is a dict
         """
         if kwargs is not None and kwargs != {}:
-            for k in kwargs.item():
-                if k == "created_at":
+            for key in kwargs.items():
+                if key == "created_at":
                     self.__dict__["created_at"] = datetime.\
                         strptime(kwargs["created_at"], '%d/%m/%y %H:%M:%S')
-                elif k == "updated_at":
+                elif key == "updated_at":
                     self.__dict__["updated_at"] = datetime.\
                         strptime(kwargs["updated_at"], '%d/%m/%y %H:%M:%S')
                 else:
-                    self.__dict__[k] = kwargs[k]
+                    self.__dict__ = kwargs
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
